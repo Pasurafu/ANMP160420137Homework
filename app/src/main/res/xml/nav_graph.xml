@@ -1,0 +1,12 @@
+<?xml version ="1.0" encoding ="utf-8"?><!--  Learn More about how to use App Actions: https://developer.android.com/guide/actions/index.html -->
+<fragment>
+    android:id="@+id/carFragment"
+    android:name="com.example.yourapp.CarFragment"
+    android:label="Car Fragment"
+    tools:layout="@layout/fragment_car" </fragment>
+
+
+<actions>
+    android:id="@+id/action_to_carFragment"
+    app:destination="@id/carFragment
+</actions>
