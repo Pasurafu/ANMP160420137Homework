@@ -9,6 +9,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
+import com.example.anmp160420137.liveModel
 
 class CarListViewModel : ViewModel() {
     private val gson = Gson()
@@ -37,7 +38,8 @@ class CarListViewModel : ViewModel() {
    year = jsonObject.getInt("year"),
       color = jsonObject.getString("color")
    )
-    carList.add(car)
+
+     carList.add(car)
  }
 return carList
     }}
