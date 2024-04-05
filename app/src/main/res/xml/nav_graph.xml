@@ -3,7 +3,11 @@
     android:id="@+id/carFragment"
     android:name="com.example.yourapp.CarFragment"
     android:label="Car Fragment"
-    tools:layout="@layout/fragment_car" </fragment>
+    tools:layout="@layout/fragment_car"
+
+    <argument
+        android:name="carId"
+        app:argType="integer" /></fragment>
 
 
 <actions>

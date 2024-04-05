@@ -37,5 +37,9 @@ class CarListFragment : Fragment() {
         // Mulai memuat data dari JSON
         carListViewModel.loadDataFromJson("http://localhost:8000/cars.json") // Ganti dengan URL yang sesuai
     }
+    // Di dalam CarListFragment
+    val action = CarListFragmentDirections.actionToCarDetailFragment(carId)
+    findNavController().navigate(action)
+
 }
 

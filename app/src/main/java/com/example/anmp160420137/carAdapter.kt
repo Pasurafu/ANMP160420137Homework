@@ -18,6 +18,11 @@ class CarAdapter(private val carList: List<Car>) : RecyclerView.Adapter<CarAdapt
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
         val currentItem = carList[position]
         holder.bind(currentItem)
+        val picasso = Picasso.Builder(holder.itemView.context)
+        picasso.listener { picasso, uri, exception ->
+            exception.printStackTrace()
+        }
+        picasso.build().load(carList[position].photoUrl).into(holder.imgPhoto)
     }
 
     override fun getItemCount() = carList.size
@@ -28,6 +33,9 @@ class CarAdapter(private val carList: List<Car>) : RecyclerView.Adapter<CarAdapt
         private val yearTextView: TextView = itemView.findViewById(R.id.yearTextView)
         private val colorTextView: TextView = itemView.findViewById(R.id.colorTextView)
         //time constrant on makin Layout
+
+        val imgPhoto:ImageView
+        init { imgPhoto = view.findViewById(R.id.imgPhoto) }
 
         fun bind(car: Car) {
             makeTextView.text = car.make

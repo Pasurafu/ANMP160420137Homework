@@ -1,11 +1,17 @@
 package com.example.anmp160420137
 
-class viewModelimport androidx.lifecycle.LiveData
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.concurrent.thread
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
+import com.google.gson.Gson
 
 class CarListViewModel : ViewModel() {
+    private val gson = Gson()
     private val jsonDataLoader = liveModel()
     private val _carListLiveData = MutableLiveData<List<Car>>()
     val carListLiveData: LiveData<List<Car>> = _carListLiveData
